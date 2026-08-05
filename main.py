@@ -58,7 +58,8 @@ async def restock(ctx):
     )
 
     view = RestockButtonView()
-    await ctx.send(content="@everyone", embed=embed, view=view)
+    # تم إزالة منشن everyone للتجربة فقط
+    await ctx.send(embed=embed, view=view)
     
     try:
         await ctx.message.delete()
