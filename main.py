@@ -26,7 +26,7 @@ bot = commands.Bot(command_prefix="!", intents=discord.Intents.all())
 class RestockButtonView(View):
     def __init__(self):
         super().__init__(timeout=None)
-        # زر الشراء الموجه لموقعك في رمز مع الإيموجي حقها
+        # زر الشراء الموجه لموقعك في رمز
         self.add_item(Button(
             label="الشراء عبر موقعنا في رمز", 
             url="https://t77.rmz.gg/", 
@@ -41,13 +41,9 @@ async def restock(ctx):
         description=(
             "تم تجديد المخزون 📦\n\n"
             "حسابات1.2m-1m<a:emoji_18:1534616315254407273>\n\n"
-            "السعر: بـ9.99﷼ فقط <a:emoji_16:1534616263601426442>\n\n"
+            "السعر: بـ22.99﷼ فقط <a:emoji_16:1534616263601426442>\n\n"
             "🎯 | مواصفات الحساب\n"
-            "📊 | لفل الحساب +60\n"
-            "🌾 | زراعة +45\n"
-            "📦 | صناديق +65\n"
-            "🍳 | طبخ +70\n"
-            "🏧 | صرافة +70\n\n"
+            "🎣 | لفل الصيد +70\n\n"
             "طرق الدفع :<a:emoji_15:1534564974436024432>\n\n"
             "-<:emoji_21:1534624121009213590> -<:emoji_23:1534643150134579220>  -<:emoji_5:1526260857904824492> -<:emoji_23:1534637381334994974> -\n\n"
             "يسعدنا اختياركم لي متجرنا <a:emoji_22:1534632890388971551>\n\n"
@@ -56,12 +52,12 @@ async def restock(ctx):
         color=0x9B59B6
     )
     
-    # تعيين الصورة البانر أو الصورة الكبيرة في الإيمبد
+    # تعيين الصورة البانر
     embed.set_image(url="https://cdn.discordapp.com/attachments/1534664004151283983/1534664957881352364/file_00000000f198820a9c47e7ecb7c02189.png")
 
     view = RestockButtonView()
     
-    # إرسال المنشن مع الإيمبد والصورة والزر
+    # إرسال المنشن مع الإيمبد
     await ctx.send(content="@everyone", embed=embed, view=view)
     
     try:
@@ -75,6 +71,6 @@ async def on_ready():
 
 keep_alive()
 
-# سحب التوكن الخاص بالبوت من متغيرات البيئة في ريندر
+# سحب التوكن من متغيرات البيئة
 TOKEN = os.environ.get("TOKEN")
 bot.run(TOKEN)
